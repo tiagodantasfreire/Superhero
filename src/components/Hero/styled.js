@@ -10,7 +10,9 @@ export const HeroWrapper = styled.div`
 `;
 
 export const HeroImage = styled.img`
+  height: 17rem;
   width: 12rem;
+  object-fit: cover;
   border-radius: 1rem;
 `;
 

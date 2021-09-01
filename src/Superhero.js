@@ -12,7 +12,7 @@ export default {
   getHeroes: async () => {
     return [
       {
-        // name: 'Iron Man',
+        name: 'Iron Man',
         from: 'Marvel',
         hero: await basicFetch(`/346`),
       },

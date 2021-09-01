@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const HeroesWrapper = styled.section`
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
 `;
 
 export const HeroListWrapper = styled.div`

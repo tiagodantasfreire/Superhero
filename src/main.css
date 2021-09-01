@@ -11,4 +11,5 @@ body {
   background: linear-gradient(#ebf4f5 0%, #b3c5df 100%) no-repeat;
   font-family: 'Bangers', cursive;
   letter-spacing: 3px;
+  height: 100%;
 }
