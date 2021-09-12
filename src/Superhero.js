@@ -7,8 +7,7 @@ const basicFetch = async (endpoint) => {
   return json
 }
 
-// eslint-disable-next-line
-export default {
+const heroes = {
   getHeroes: async () => {
     return [
       {
@@ -90,7 +89,9 @@ export default {
         name: 'Thanos',
         from: 'Marvel',
         hero: await basicFetch(`/655`)
-      }
+      },
     ]
   }
 }
+
+export default heroes;

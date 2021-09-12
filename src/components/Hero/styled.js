@@ -10,7 +10,7 @@ export const HeroWrapper = styled.div`
 
 export const HeroImageWrapper = styled.div`
   width: 12rem;
-  height: 17rem;
+  height: 18rem;
   border-radius: 1rem;
   display: flex;
   justify-content: center;
@@ -43,11 +43,9 @@ export const HeroStatsWrapper = styled.div`
   justify-content: space-evenly;
   padding: 0.5rem 1rem;
   width: 10rem;
-  height: 16rem;
+  height: 17rem;
   border: 1px solid;
   border-radius: 1rem;
-  width: 10rem;
-  height: 16rem;
   transition: margin 0.6s ease-in-out;
   background: linear-gradient(#b3c5df 0%, #ebf4f5 100%) no-repeat;
 `;
@@ -74,4 +72,15 @@ export const PercentageWrapper = styled.div`
     border-radius: 1rem;
     max-width: calc(100% - 5px);
   }
+`;
+
+export const SelectWrapper = styled.div`
+  width: 90%;
+  background-color: green;
+  border: 1px solid;
+  border-radius: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
