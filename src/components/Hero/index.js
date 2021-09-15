@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
+
+import { HeroContext } from '../../contexts/heroContext';
 
 import * as S from "./styled";
 
 const Hero = ({ hero }) =>  {
+  const { setHero } = useContext(HeroContext);
+
   const toggleStats = (id) => {
     const stats = document.getElementById(`${id}`).style;
     stats.marginLeft === '-193px' ? stats.marginLeft = '-22px' : stats.marginLeft = '-193px';
   };
 
-  const handleSelectHero = (hero) => {
-    console.log(hero);
-  }
+  const selectHero = (hero) => {
+    setHero(hero);
+  };
 
   return (
     <S.HeroWrapper key={hero.id}>
@@ -72,7 +76,7 @@ const Hero = ({ hero }) =>  {
           </S.PercentageWrapper>
         </S.HeroStats>
         <S.SelectWrapper
-          onClick={() => handleSelectHero(hero)}
+          onClick={() => selectHero(hero)}
         >
           Select
         </S.SelectWrapper>
