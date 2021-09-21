@@ -8,8 +8,7 @@ import Loader from '../Loader';
 import * as S from  './styled';
 
 const HeroList = () => {
-  const { heroes, selectedHero } = useContext(HeroContext);
-  console.log(selectedHero);
+  const { heroes } = useContext(HeroContext);
 
   const marvelHeroes = heroes.filter((hero) => hero.from === 'Marvel');
   const dcHeroes = heroes.filter((hero) => hero.from === 'DC');

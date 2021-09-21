@@ -14,6 +14,7 @@ const Hero = ({ hero }) =>  {
 
   const selectHero = (hero) => {
     setHero(hero);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

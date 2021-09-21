@@ -7,7 +7,7 @@ export const HeroContext = createContext();
 
 const HeroProvider = ({ children }) => {
   const [heroes, setHeroes] = useState([]);
-  const [selectedHero, setSelectedHero] = useState({}) 
+  const [selectedHeroes, setSelectedHeroes] = useState({}) 
 
   useEffect(() => {
     const loadHeroes = async () => {
@@ -19,18 +19,18 @@ const HeroProvider = ({ children }) => {
   }, []);
 
   const setHero = useCallback((hero) => {
-    if (Object.keys(selectedHero).length >= 2) {
+    if (Object.keys(selectedHeroes).length >= 2) {
       console.log('Heróis já selecionados');
     } else {
-      setSelectedHero({
-        ...selectedHero,
+      setSelectedHeroes({
+        ...selectedHeroes,
         [hero.name]: hero,
       });
     }
-  }, [selectedHero]);
+  }, [selectedHeroes]);
 
   return (
-    <HeroContext.Provider value={{ heroes, setHero, selectedHero }}>
+    <HeroContext.Provider value={{ heroes, setHero, selectedHeroes }}>
       {children}
     </HeroContext.Provider>
   )
