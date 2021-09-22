@@ -1,14 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import { HeroContext } from '../../contexts/heroContext';
 
 import Hero from '../Hero';
+import NotSelected from './components/NotSelected';
 
 import * as S from './styled';
 
 const SelectedHeroes = () => {
+  const [isAllHeroesSelected, setIsAllHeroesSelected] = useState(false)
   const { selectedHeroes } = useContext(HeroContext);
   const heroes = Object.values(selectedHeroes);
+
+  useEffect(() => {
+    if (selectedHeroes[1]) {
+      setIsAllHeroesSelected(true);
+    }
+  }, [selectedHeroes]);
+
 
   const compareHeroes = () => {
     console.log('comparando...')
@@ -19,11 +28,12 @@ const SelectedHeroes = () => {
   return (
     <S.SelectedHeroesWrapper>
       <S.SelectedHeroes>
-        {heroes.map((hero) => (
-          <Hero key={hero.id} hero={hero} />
-        ))}
+          {selectedHeroes[0] ? <Hero key={heroes[0].id} hero={heroes[0]} /> : <NotSelected />}
+          {selectedHeroes[1] ? <Hero key={heroes[1].id} hero={heroes[1]} /> : <NotSelected />}
       </S.SelectedHeroes>
-      <button onClick={compareHeroes}>Compare</button>
+      <S.CompareButton isDisabled={!isAllHeroesSelected} onClick={compareHeroes}>
+        Compare
+      </S.CompareButton>
     </S.SelectedHeroesWrapper>
   );
 };

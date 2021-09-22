@@ -24,7 +24,7 @@ const HeroProvider = ({ children }) => {
     } else {
       setSelectedHeroes({
         ...selectedHeroes,
-        [hero.name]: hero,
+        [Object.keys(selectedHeroes).length]: hero,
       });
     }
   }, [selectedHeroes]);
